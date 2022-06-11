@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+form {
+    margin: 2em 0;
+}
+
+.mt {
+    margin-top: 30px;
+}
+
+.gp {
+    display: flex;
+    flex-flow: column-reverse;
+    margin-bottom: 1em;
+}
+
+input {
+    outline: 0px;
+    border: 0px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.383);
+    width: 400px;
+    font-size: larger;
+    background-color: inherit;
+}
+
+label,
+input {
+    transition: all 0.2s;
+    touch-action: manipulation;
+    font-weight: 300;
+}
+
+
+
+input:placeholder-shown+label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left bottom;
+    transform: translate(0, 1.5rem) scale(1.2);
+}
+
+input:not(:placeholder-shown)+label,
+input:focus+label {
+    transform: translate(0, 0) scale(1);
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+    opacity: 0;
+    transition: inherit;
+}
+
+input:focus::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+input:focus {
+    outline: 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.706);
+}
+
+label {
+    text-transform: capitalize;
+    letter-spacing: 0.09em;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(5px);
+    width: 550px;
+    height: 450px;
+    background-color: rgba(255, 255, 255, 0.502);
+    z-index: 10;
+    border-radius: 15px;
+    border: 1px solid rgba(128, 128, 128, 0.383);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.container:hover {
+    background-color: rgba(255, 255, 255, 0.741);
+}
+
+
+.bg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.163);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 2;
+}
+
+
+span {
+    position: absolute;
+    margin-top: 30px;
+    display: inline-block;
+    width: 350px;
+    height: 300px;
+    border-radius: 30% 50% 70% 15%;
+
+}
+
+.satu {
+    background-color: #FFA581;
+    box-shadow: 0 0 80px 100px #FFA581;
+    animation: satu 15s linear infinite;
+}
+
+@keyframes satu {
+    0% {
+        left: 0%;
+        top: 0%;
+    }
+
+    25% {
+        left: 40%;
+        top: 5%
+    }
+
+    50% {
+        left: 75%;
+        top: 30;
+    }
+
+    75% {
+        left: 30%;
+        top: 50%;
+    }
+
+    100% {
+        left: 0%;
+        top: 0%;
+    }
+
+}
+
+.dua {
+    right: 0%;
+    background-color: #6B85A6;
+    box-shadow: 0 0 80px 100px #6B85A6;
+    bottom: 0%;
+    animation: dua 15s linear infinite;
+}
+
+@keyframes dua {
+    0% {
+        right: 0%;
+        bottom: 0%;
+    }
+
+    25% {
+        right: 40%;
+        bottom: 15%
+    }
+
+    50% {
+        right: 75%;
+        bottom: 30%;
+    }
+
+    75% {
+        right: 30%;
+        bottom: 80%;
+    }
+
+    100% {
+        right: 0%;
+        bottom: 0%;
+    }
+
+}
+
+.tiga {
+    right: 45%;
+    background-color: #8BC7B4;
+    box-shadow: 0 0 80px 100px #8BC7B4;
+    bottom: 45%;
+    animation: tiga 15s linear infinite;
+}
+
+@keyframes tiga {
+    0% {
+        right: 45%;
+        bottom: 45%;
+    }
+
+    25% {
+        right: 15%;
+        bottom: 0%
+    }
+
+    50% {
+        right: 30%;
+        bottom: 80%;
+    }
+
+    75% {
+        right: 70%;
+        bottom: 45%;
+    }
+
+    100% {
+        right: 45%;
+        bottom: 45%;
+    }
+
+}
+
+.btn {
+    padding: 10px;
+    border: #70a292 solid 2px;
+    border-radius: 5px;
+    background-color: #8BC7B4;
+    font-size: large;
+    cursor: pointer;
+}
+
+.btn:active {
+    background-color: #70a292;
+}
+
+.link {
+    text-decoration: none;
+    color: #7395c1;
+    cursor: pointer;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+nav {
+    position: relative;
+    top: 0%;
+    height: 60px;
+    width: 100%;
+    background-color: #FFA581;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.me {
+    margin-right: 20px;
+}
+
+.ms {
+    margin-left: 28px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}

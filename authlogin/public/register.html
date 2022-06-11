@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../static/style.css" />
+        <!-- <link
+            rel="stylesheet"
+            href="{{ url_for('static', path='/style.css') }}"
+        /> -->
+        <title>Register</title>
+        <style>
+            .container {
+                height: 550px !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="mt">Register</h1>
+            <form action="{{ url_for('register') }}" method="post">
+                <div class="gp mt">
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="name"
+                    />
+                    <label for="name">Name</label>
+                </div>
+                <div class="gp mt">
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Username"
+                    />
+                    <label for="username">username</label>
+                </div>
+                <div class="gp mt">
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                    />
+                    <label for="password">password</label>
+                </div>
+                <div class="gp mt">
+                    <button class="mt btn">Register</button>
+                </div>
+            </form>
+            <p>
+                Already have account?<a
+                    href="{{ url_for('root') }}"
+                    class="link"
+                    >Login</a
+                >
+            </p>
+        </div>
+        <div class="bg"></div>
+        <span class="satu"></span>
+        <span class="dua"> </span>
+        <span class="tiga"> </span>
+    </body>
+</html>

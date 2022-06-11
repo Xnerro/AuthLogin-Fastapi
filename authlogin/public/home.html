@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../static/style.css" />
+        <!-- <link
+            rel="stylesheet"
+            href="{{ url_for('static', path='/style.css') }}"
+        /> -->
+        <title>Home</title>
+    </head>
+    <body>
+        <nav>
+            <div class="left">
+                <img
+                    src="https://icon-library.com/images/icon-png-logos/icon-png-logos-7.jpg"
+                    width="40px"
+                    height="40px"
+                    alt=""
+                    class="ms me"
+                />
+                <h3>{{ user.name }} Home</h3>
+            </div>
+            <div class="right">
+                <a class="link me" style="color: black">Logout</a>
+            </div>
+        </nav>
+
+        <h1 class="ms mt">Hello {{ user.name }}</h1>
+    </body>
+</html>
