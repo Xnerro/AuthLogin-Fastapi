@@ -1,5 +1,6 @@
 from .__init__ import *
 import jwt
+from jwt.exceptions import DecodeError
 
 # exception for jwt token
 @app.exception_handler(AuthJWTException)
@@ -18,10 +19,13 @@ def root(req: Request):
 # decode token for get the subject
 @app.get("/home", response_class=HTMLResponse)
 def home(req: Request, auth: AuthJWT = Depends(), db: Session = Depends(get_db)):
-    auth.jwt_required(req.session.get("token"))
-    x = jwt.decode(req.session.get("token"), options={"verify_signature": False})
-    user = HandUser.by_username(db, x["sub"])
-    return pubilc.TemplateResponse("home.html", {"request": req, "user": user})
+    try:
+        auth.jwt_required(req.session.get("token"))
+        x = jwt.decode(req.session.get("token"), options={"verify_signature": False})
+        user = HandUser.by_username(db, x["sub"])
+        return pubilc.TemplateResponse("home.html", {"request": req, "user": user})
+    except DecodeError:
+        return JSONResponse({"msg": "not authenticated"}, status_code=401)
 
 
 # route Register and will render Register templates
@@ -33,6 +37,7 @@ def register(req: Request):
 # funcion to start fastapi with uvicorn
 def start():
     uvicorn.run("authlogin.app:app", reload=True, port=3000)
+
 
 # run function if not use poetry
 # start()
